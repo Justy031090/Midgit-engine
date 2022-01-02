@@ -1,15 +1,29 @@
 import axios from 'axios';
 import React, { useState, useEffect } from 'react';
+
 import './search.css';
+import Results from '../results/Results';
 function Search() {
     const [term, setTerm] = useState('');
     const [data, setData] = useState([]);
+    const [isLoading, setIsLoading] = useState(false);
+    const [err, setErr] = useState('');
+    const [search, setSearch] = useState('');
+
     useEffect(() => {
         const getData = async () => {
-            const data = await axios.get(
-                `https://api.github.com/search/repositories?q=${term}`
-            );
-            setData(data.data.items);
+            setIsLoading(true);
+            setErr('');
+            try {
+                const data = await axios.get(
+                    `https://api.github.com/search/repositories?q=${term}`
+                );
+                setData(data.data.items);
+            } catch (e) {
+                setErr(e.message);
+            }
+            setIsLoading(false);
+            setTerm('');
         };
         const timeOut = setTimeout(() => {
             if (term) {
@@ -19,34 +33,45 @@ function Search() {
         return () => {
             clearTimeout(timeOut);
         };
-    }, [term]);
+    }, [search]);
     const handleInput = (e) => {
         setTerm(e.target.value);
     };
+    const handleKeyDown = (e) => {
+        if (e.key === 'Enter') {
+            setSearch(term);
+        }
+    };
     const renderItems = () => {
-        console.log(data);
-        return data.map((el) => {
+        return data.map((repo) => {
             return (
-                <div key={el.id} className="rendered-container">
-                    <div className="image-container">
-                        <img
-                            className="avatar-image"
-                            src={el.owner.avatar_url}
-                            alt="Image Not Found"
-                        />
-                    </div>
+                <div key={repo.id} className="rendered-container">
+                    <Results repo={repo} />
                 </div>
             );
         });
     };
     return (
-        <>
-            <input type="text" onChange={(e) => handleInput(e)} />
-            <button className="search-btn" onClick={renderItems}>
-                Search
-            </button>
-            <div>{data.length && renderItems()}</div>
-        </>
+        <div className="search-container">
+            <div className="hard-coded">
+                <input
+                    type="text"
+                    onChange={(e) => handleInput(e)}
+                    value={term}
+                    onKeyDown={(e) => handleKeyDown(e)}
+                />
+                <button className="search-btn" onClick={() => setSearch(term)}>
+                    Search
+                </button>
+            </div>
+            <div className="rendered">
+                {data && (
+                    <div className="result-container">{renderItems()}</div>
+                )}
+                {isLoading && <div>Loading...</div>}
+                {err && <div>{err}</div>}
+            </div>
+        </div>
     );
 }
 
