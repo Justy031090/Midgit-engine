@@ -1,4 +1,4 @@
-export default (state, action) => {
+const AppReducer = (state, action) => {
     switch (action.type) {
         case 'ADD_REPO_TO_WATCHLIST':
             return {
@@ -16,3 +16,4 @@ export default (state, action) => {
             return state;
     }
 };
+export default AppReducer;
