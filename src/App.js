@@ -1,8 +1,21 @@
+import { BrowserRouter, Route } from 'react-router-dom';
+import Navbar from './components/navbar/Navbar';
+import Homepage from './components/homepage/Homepage';
+import Watchlist from './components/watchlist/Watchlist';
+import Login from './components/login/Login';
+import Search from './components/search/Search';
 function App() {
-    const newYear = new Date('December 31, 2021 23:59:59');
     return (
         <div className="app">
-            Year is {newYear.getFullYear()}, still working on the project
+            <div>
+                <BrowserRouter>
+                    <Navbar />
+                    <Search />
+                    <Route path="/home" exact component={Homepage} />
+                    <Route path="/watchlist" component={Watchlist} />
+                    <Route path="/login" component={Login} />
+                </BrowserRouter>
+            </div>
         </div>
     );
 }
