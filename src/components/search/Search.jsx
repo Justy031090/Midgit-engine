@@ -33,7 +33,7 @@ function Search() {
         return () => {
             clearTimeout(timeOut);
         };
-    }, [search]);
+    }, [search, term]);
     const handleInput = (e) => {
         setTerm(e.target.value);
     };
