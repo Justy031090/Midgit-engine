@@ -70,7 +70,7 @@ function Search() {
             </div>
             <div className="rendered">
                 {data && <div>{renderItems()}</div>}
-                {isLoading && <div>Loading...</div>}
+                {isLoading && <div className="loader">Loading...</div>}
                 {err && <div>{err}</div>}
             </div>
         </div>

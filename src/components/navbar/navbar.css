@@ -4,12 +4,13 @@
     background-color: #24292e;
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: center;
     text-decoration: none;
 }
 .navbar a {
     text-decoration: none;
     color: #f6f6f6;
-    padding: 0.5rem;
-    margin: 1rem;
+    padding: 1rem;
+    margin: 0, 3rem;
+    font-size: 1.25rem;
 }

@@ -15,13 +15,13 @@ function Results({ repo }) {
                 />
             </div>
             <div className="owner-container">
-                <div className="owner-name">Owner: {repo.owner.login}</div>
-                <div className="owner-type">Owner type: {repo.owner.type}</div>
+                <div className="owner-type">Ownership: {repo.owner.type}</div>
+                <div className="owner-name">User name: {repo.owner.login}</div>
                 <div className="repo-description">
                     Description:
-                    {repo.description.length > 90
-                        ? repo.description.substring(0, 90) + '...'
-                        : repo.description.substring(0, 90)}
+                    {repo.description
+                        ? repo.description.substring(0, 90)
+                        : repo.description}
                 </div>
                 <div className="repo-stars">
                     Stargazers {repo.stargazers_count}

@@ -1,5 +1,52 @@
-.homepage-container {
+@import url('https://fonts.googleapis.com/css2?family=Satisfy&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+
+.break-container {
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: #521834;
+    background-image: linear-gradient(315deg, #9c2c62 0%, #000000 74%);
+    height: 100%;
+    width: 100%;
+}
+.homepage-break {
+    font-family: 'Satisfy', cursive;
+    display: flex;
+    align-items: center;
+
+    height: 5rem;
+    font-size: 3rem;
+    color: #f6f6f6;
+}
+.dot {
+    font-size: 5rem;
+    color: red;
+}
+.homepage-main {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    width: 100%;
+    background-color: #923cb5;
+    background-image: linear-gradient(147deg, #923cb5 0%, #000000 74%);
+}
+.homepage-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 3rem;
+    height: 70vh;
+    width: 80vh;
+    border: 1px solid white;
+    text-decoration: none;
+    color: white;
+    font-size: 5rem;
+    font-family: 'Permanent Marker', cursive;
+}
+.homepage-main a {
+    text-decoration: none;
 }

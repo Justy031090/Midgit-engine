@@ -1,6 +1,7 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import RepoCard from '../repo-card/RepoCard';
+import './watchlist.css';
 
 function Watchlist() {
     const { watchlist } = useContext(GlobalContext);
