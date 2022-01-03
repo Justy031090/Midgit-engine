@@ -8,7 +8,7 @@ function Homepage() {
             <div className="break-container">
                 <div className="homepage-break">
                     <span className="break-add">
-                        Midgit, some advertising sentence{' '}
+                        Midgit, some advertising sentence
                         <i className="dot">.</i>
                     </span>
                 </div>

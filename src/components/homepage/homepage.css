@@ -12,13 +12,14 @@
     width: 100%;
 }
 .homepage-break {
-    font-family: 'Satisfy', cursive;
     display: flex;
     align-items: center;
-
-    height: 5rem;
-    font-size: 3rem;
     color: #f6f6f6;
+}
+.break-add {
+    text-align: center;
+    font-size: 3rem;
+    font-family: 'Satisfy', cursive;
 }
 .dot {
     font-size: 5rem;

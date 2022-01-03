@@ -7,21 +7,21 @@ function Navbar() {
             <div className="navbar">
                 <div className="logo">Midgit.</div>
                 <Link to={'/'}>
-                    <i class="fa fa-home"></i> Home
+                    <i className="fa fa-home"></i> Home
                 </Link>
                 <Link to={'/search'}>
-                    <i class="fa fa-search"></i> Find Repos
-                </Link>
-                <Link to={'/login'}>
-                    <div className="link">
-                        {' '}
-                        <i class="fa fa-sign-in"></i> Login
-                    </div>
+                    <i className="fa fa-search"></i> Find Repos
                 </Link>
                 <Link to={'/watchlist'}>
                     <div className="link">
                         {' '}
-                        <i class="fa fa-list"></i> Watchlist
+                        <i className="fa fa-list"></i> Watchlist
+                    </div>
+                </Link>
+                <Link to={'/login'}>
+                    <div className="link">
+                        {' '}
+                        <i className="fa fa-sign-in"></i> Login
                     </div>
                 </Link>
             </div>

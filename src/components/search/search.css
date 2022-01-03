@@ -1,3 +1,6 @@
+.search-container {
+    background: #a9a9a9;
+}
 .rendered-container {
     display: flex;
     width: 100%;
@@ -12,6 +15,7 @@
     border: 1px solid black;
     width: 100%;
     margin: 0.25rem;
+    background: wheat;
 }
 .image-container {
     height: 100px;
@@ -41,7 +45,7 @@
 .hard-coded {
     display: flex;
     justify-content: center;
-    margin: 1rem;
+    padding: 1rem;
 }
 .hard-coded button {
     font-size: 1.25rem;

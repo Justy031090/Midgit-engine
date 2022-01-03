@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 
 import './search.css';
 import Results from '../results/Results';
@@ -9,6 +9,24 @@ function Search() {
     const [isLoading, setIsLoading] = useState(false);
     const [err, setErr] = useState('');
     const [search, setSearch] = useState('');
+    const [page, setPage] = useState(1);
+
+    const observer = useRef();
+    const lastRepo = useCallback(
+        (node) => {
+            if (isLoading) return;
+            if (observer.current) {
+                observer.current.disconnect();
+            }
+            observer.current = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    setPage((prev) => prev + 1);
+                }
+            });
+            if (node) observer.current.observe(node);
+        },
+        [isLoading]
+    );
 
     useEffect(() => {
         const getData = async () => {
@@ -16,10 +34,9 @@ function Search() {
             setErr('');
             try {
                 const data = await axios.get(
-                    `https://api.github.com/search/repositories?q=${term}&per_page=50`
+                    `https://api.github.com/search/repositories?q=${term}&per_page=20&page=${page}`
                 );
                 setData(data.data.items);
-                console.log(data);
             } catch (e) {
                 setErr(e.message);
             }
@@ -34,7 +51,8 @@ function Search() {
         return () => {
             clearTimeout(timeOut);
         };
-    }, [search, term]);
+    }, [search, term, page]);
+
     const handleInput = (e) => {
         setTerm(e.target.value);
     };
@@ -44,12 +62,24 @@ function Search() {
         }
     };
     const renderItems = () => {
-        return data.map((repo) => {
-            return (
-                <div key={repo.id} className="rendered-container">
-                    <Results repo={repo} />
-                </div>
-            );
+        return data.map((repo, index) => {
+            if (data.length === index + 1) {
+                return (
+                    <div
+                        key={repo.id}
+                        className="rendered-container"
+                        ref={lastRepo}
+                    >
+                        <Results repo={repo} />
+                    </div>
+                );
+            } else {
+                return (
+                    <div key={repo.id} className="rendered-container">
+                        <Results repo={repo} />
+                    </div>
+                );
+            }
         });
     };
     return (
@@ -65,7 +95,7 @@ function Search() {
                     className="search-btn"
                     onClick={() => setSearch(term.toLowerCase())}
                 >
-                    <i class="fa fa-search"></i>
+                    <i className="fa fa-search"></i>
                 </button>
             </div>
             <div className="rendered">
