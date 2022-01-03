@@ -3,13 +3,13 @@
     width: 100%;
     height: 100%;
     box-sizing: border-box;
+    padding: 1rem;
 }
 .result-card {
     display: flex;
     justify-content: flex-start;
     align-items: center;
     border: 1px solid black;
-    margin: 10px;
     width: 100%;
     margin: 0.25rem;
 }
@@ -42,6 +42,19 @@
     display: flex;
     justify-content: center;
     margin: 1rem;
+}
+.hard-coded button {
+    font-size: 1.25rem;
+    color: #f6f6f6;
+    background: #24292e;
+    opacity: 0.9;
+}
+.hard-coded input {
+    width: 50%;
+    border: none;
+    background: #24292e;
+    opacity: 0.9;
+    color: #f6f6f6;
 }
 .owner-container {
     flex-grow: 1;

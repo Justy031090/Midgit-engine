@@ -1,18 +1,28 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
-
 function Navbar() {
     return (
         <>
             <div className="navbar">
-                <Link to={'/'}>Home</Link>
-                <Link to={'/search'}>Find Repos</Link>
+                <div className="logo">Midgit.</div>
+                <Link to={'/'}>
+                    <i class="fa fa-home"></i> Home
+                </Link>
+                <Link to={'/search'}>
+                    <i class="fa fa-search"></i> Find Repos
+                </Link>
                 <Link to={'/login'}>
-                    <div className="link">Login</div>
+                    <div className="link">
+                        {' '}
+                        <i class="fa fa-sign-in"></i> Login
+                    </div>
                 </Link>
                 <Link to={'/watchlist'}>
-                    <div className="link">Watchlist</div>
+                    <div className="link">
+                        {' '}
+                        <i class="fa fa-list"></i> Watchlist
+                    </div>
                 </Link>
             </div>
         </>

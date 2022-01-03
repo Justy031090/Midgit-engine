@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 .navbar {
     margin: 0;
     box-sizing: border-box;
@@ -7,10 +8,24 @@
     justify-content: center;
     text-decoration: none;
 }
+.logo {
+    flex-shrink: 2;
+    margin-right: auto;
+    margin-left: 1rem;
+    width: 15%;
+    font-size: 3rem;
+    color: rgb(100, 15, 100);
+    font-weight: 900;
+    font-family: 'Permanent Marker', cursive;
+}
 .navbar a {
+    flex-grow: 2;
     text-decoration: none;
     color: #f6f6f6;
     padding: 1rem;
     margin: 0, 3rem;
     font-size: 1.25rem;
+}
+.fa {
+    color: crimson;
 }

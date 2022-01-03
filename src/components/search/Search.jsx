@@ -65,7 +65,7 @@ function Search() {
                     className="search-btn"
                     onClick={() => setSearch(term.toLowerCase())}
                 >
-                    Search
+                    <i class="fa fa-search"></i>
                 </button>
             </div>
             <div className="rendered">
