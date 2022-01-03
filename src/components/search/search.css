@@ -1,0 +1,35 @@
+.rendered-container {
+    display: flex;
+    width: 100%;
+    height: 100%;
+}
+.result-card {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    border: 1px solid black;
+    margin: 10px;
+    width: 100%;
+    margin: 0.25rem;
+}
+.result-card img {
+    height: 100px;
+    width: 100px;
+}
+.result-card button {
+    font-size: 0.75rem;
+}
+.result-card div {
+    padding: 0.25rem;
+}
+.owner-github {
+    margin-left: auto;
+}
+.hard-coded {
+    display: flex;
+    justify-content: center;
+    margin: 1rem;
+}
+.owner-container {
+    flex-grow: 1;
+}

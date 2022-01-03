@@ -6,7 +6,7 @@ function Results({ repo }) {
     let storedRepo = watchlist.find((o) => o.id === repo.id);
     const repoDisabled = storedRepo ? true : false;
     return (
-        <div className="result-container">
+        <div className="result-card">
             <div className="image-container">
                 <img
                     className="avatar-image"
@@ -18,7 +18,10 @@ function Results({ repo }) {
                 <div className="owner-name">Owner: {repo.owner.login}</div>
                 <div className="owner-type">Owner type: {repo.owner.type}</div>
                 <div className="repo-description">
-                    Description: {repo.description}
+                    Description:
+                    {repo.description.length > 90
+                        ? repo.description.substring(0, 90) + '...'
+                        : repo.description.substring(0, 90)}
                 </div>
                 <div className="repo-stars">
                     Stargazers {repo.stargazers_count}

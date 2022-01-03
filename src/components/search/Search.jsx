@@ -16,9 +16,10 @@ function Search() {
             setErr('');
             try {
                 const data = await axios.get(
-                    `https://api.github.com/search/repositories?q=${term}`
+                    `https://api.github.com/search/repositories?q=${term}&per_page=50`
                 );
                 setData(data.data.items);
+                console.log(data);
             } catch (e) {
                 setErr(e.message);
             }
@@ -39,7 +40,7 @@ function Search() {
     };
     const handleKeyDown = (e) => {
         if (e.key === 'Enter') {
-            setSearch(term);
+            setSearch(term.toLowerCase());
         }
     };
     const renderItems = () => {
@@ -60,14 +61,15 @@ function Search() {
                     value={term}
                     onKeyDown={(e) => handleKeyDown(e)}
                 />
-                <button className="search-btn" onClick={() => setSearch(term)}>
+                <button
+                    className="search-btn"
+                    onClick={() => setSearch(term.toLowerCase())}
+                >
                     Search
                 </button>
             </div>
             <div className="rendered">
-                {data && (
-                    <div className="result-container">{renderItems()}</div>
-                )}
+                {data && <div>{renderItems()}</div>}
                 {isLoading && <div>Loading...</div>}
                 {err && <div>{err}</div>}
             </div>
