@@ -39,15 +39,23 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    margin: 3rem;
-    height: 70vh;
-    width: 80vh;
-    border: 1px solid white;
+    height: 100%;
+    width: 100%;
+    border: 3px solid white;
     text-decoration: none;
     color: white;
     font-size: 5rem;
     font-family: 'Permanent Marker', cursive;
+    padding: 5rem;
 }
 .homepage-main a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 3rem;
     text-decoration: none;
+}
+.homepage-link:hover {
+    color: crimson;
+    border: 3px solid orangered;
 }

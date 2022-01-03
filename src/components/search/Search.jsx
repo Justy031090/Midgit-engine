@@ -9,7 +9,7 @@ function Search() {
     const [isLoading, setIsLoading] = useState(false);
     const [err, setErr] = useState('');
     const [search, setSearch] = useState('');
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState(0);
 
     const observer = useRef();
     const lastRepo = useCallback(
@@ -19,9 +19,7 @@ function Search() {
                 observer.current.disconnect();
             }
             observer.current = new IntersectionObserver((entries) => {
-                if (entries[0].isIntersecting) {
-                    setPage((prev) => prev + 1);
-                }
+                if (entries[0].isIntersecting) setPage((prev) => prev + 1);
             });
             if (node) observer.current.observe(node);
         },
@@ -34,24 +32,25 @@ function Search() {
             setErr('');
             try {
                 const data = await axios.get(
-                    `https://api.github.com/search/repositories?q=${term}&per_page=20&page=${page}`
+                    `https://api.github.com/search/repositories?q=${term}&page=${page}`
                 );
                 setData(data.data.items);
+                console.log(data);
             } catch (e) {
                 setErr(e.message);
             }
             setIsLoading(false);
-            setTerm('');
+            setTerm(''); // causing to Scrol-Rerendering not work if searched without submit
         };
         const timeOut = setTimeout(() => {
-            if (term) {
+            if (search) {
                 getData();
             }
         }, 500);
         return () => {
             clearTimeout(timeOut);
         };
-    }, [search, term, page]);
+    }, [search, page]);
 
     const handleInput = (e) => {
         setTerm(e.target.value);
@@ -100,7 +99,7 @@ function Search() {
             </div>
             <div className="rendered">
                 {data && <div>{renderItems()}</div>}
-                {isLoading && <div className="loader">Loading...</div>}
+                {isLoading && <div className="loader"></div>}
                 {err && <div>{err}</div>}
             </div>
         </div>

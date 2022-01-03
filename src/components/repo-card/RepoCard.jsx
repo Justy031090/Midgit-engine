@@ -13,7 +13,7 @@ function RepoCard({ repo, type }) {
                 />
             </div>
             <div className="owner-container">
-                <div className="owner-type">Owner type: {repo.owner.type}</div>
+                <div className="owner-type">Ownership: {repo.owner.type}</div>
                 <div className="owner-name">Owner: {repo.owner.login}</div>
                 <div className="repo-description">
                     Description:

@@ -1,5 +1,7 @@
 .search-container {
     background: #a9a9a9;
+    height: 100vh;
+    box-sizing: border-box;
 }
 .rendered-container {
     display: flex;
@@ -7,6 +9,7 @@
     height: 100%;
     box-sizing: border-box;
     padding: 1rem;
+    background: #a9a9a9;
 }
 .result-card {
     display: flex;
@@ -29,15 +32,43 @@
     font-size: 0.75rem;
     color: #f6f6f6;
     background-color: hsl(14, 23%, 22%);
+    border: 1px solid hsl(14, 23%, 22%);
     height: 2rem;
     width: 10rem;
+    cursor: pointer;
+}
+.result-card button:disabled {
+    cursor: default;
+    background-color: hsl(13, 27%, 54%);
+}
+.result-card button:enabled:hover {
+    background-color: hsl(13, 75%, 65%);
+    border: 1px solid hsl(13, 75%, 65%);
+    font-size: 0.9rem;
 }
 .result-card div {
     padding: 0.25rem;
 }
+.owner-github {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    overflow: hidden;
+}
 .result-card a {
     text-decoration-line: underline;
     color: hsl(250, 47%, 30%);
+    font-size: 1rem;
+    padding: 1.5rem;
+}
+.result-card a:hover {
+    color: hsl(250, 64%, 50%);
+}
+.fa-search {
+    padding: 0;
+    margin: 0;
+    color: crimson;
 }
 .owner-github {
     margin-left: auto;

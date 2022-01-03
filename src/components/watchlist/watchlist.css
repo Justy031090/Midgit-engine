@@ -3,10 +3,8 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    box-sizing: border-box;
-    background: #a9a9a9;
-    height: 100vh;
-    width: 100%;
+    height: 100%;
+    background-color: #a9a9a9;
 }
 .repo-card {
     display: flex;
@@ -15,6 +13,7 @@
     border: 1px solid black;
     margin: 10px;
     width: 100%;
+    height: 100%;
     margin: 0.25rem;
     background: wheat;
 }
@@ -30,15 +29,27 @@
     font-size: 0.75rem;
     color: #f6f6f6;
     background-color: hsl(14, 23%, 22%);
+    border: 1px solid hsl(14, 23%, 22%);
     height: 2rem;
     width: 10rem;
+    cursor: pointer;
+}
+.repo-card button:enabled:hover {
+    background-color: hsl(13, 75%, 65%);
+    border: 1px solid hsl(13, 75%, 65%);
+    font-size: 0.8rem;
 }
 .repo-card div {
     padding: 0.25rem;
 }
 .repo-card a {
+    font-size: 1.2rem;
+    padding: 1.5rem;
     text-decoration-line: underline;
     color: hsl(250, 47%, 30%);
+}
+.repo-card a:hover {
+    color: hsl(250, 64%, 50%);
 }
 .owner-github {
     margin-left: auto;
@@ -48,6 +59,5 @@
 }
 .rendered-container {
     display: flex;
-    width: 100%;
-    height: 100%;
+    background: #a9a9a9;
 }

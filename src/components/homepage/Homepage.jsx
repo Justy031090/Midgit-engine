@@ -9,7 +9,7 @@ function Homepage() {
                 <div className="homepage-break">
                     <span className="break-add">
                         Midgit, some advertising sentence
-                        <i className="dot">.</i>
+                        <i className="dot"> .</i>
                     </span>
                 </div>
             </div>
