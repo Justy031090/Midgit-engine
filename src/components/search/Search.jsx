@@ -9,7 +9,7 @@ function Search() {
     const [isLoading, setIsLoading] = useState(false);
     const [err, setErr] = useState('');
     const [search, setSearch] = useState('');
-    const [page, setPage] = useState(0);
+    const [page, setPage] = useState(1);
 
     const observer = useRef();
     const lastRepo = useCallback(
@@ -31,11 +31,10 @@ function Search() {
             setIsLoading(true);
             setErr('');
             try {
-                const data = await axios.get(
-                    `https://api.github.com/search/repositories?q=${term}&page=${page}`
+                const fetchedData = await axios.get(
+                    `https://api.github.com/search/repositories?q=${search}&page=${page}`
                 );
-                setData(data.data.items);
-                console.log(data);
+                setData([...data, ...fetchedData.data.items]);
             } catch (e) {
                 setErr(e.message);
             }

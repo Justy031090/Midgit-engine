@@ -19,6 +19,7 @@
     font-family: 'Permanent Marker', cursive;
 }
 .navbar a {
+    display: flex;
     flex-grow: 2;
     text-decoration: none;
     color: #f6f6f6;
@@ -31,7 +32,10 @@
     color: rgb(172, 45, 172);
 }
 .navbar .fa {
+    position: relative;
     color: crimson;
-    margin-left: 5rem;
-    margin-right: 0.75rem;
+    padding: 0 0.2rem;
+}
+.fa-home {
+    margin-left: 3rem;
 }
