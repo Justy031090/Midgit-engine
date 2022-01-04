@@ -3,22 +3,25 @@ import { Card, Button, Form, Alert } from 'react-bootstrap';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
 
-function Login() {
+function Signup() {
     const [err, setErr] = useState('');
     const [loading, setLoading] = useState(false);
     const emailRef = useRef();
     const passwordRef = useRef();
-    const { login } = useAuth();
+    const passwordConfirmRef = useRef();
+    const { signup } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (passwordRef.current.value !== passwordConfirmRef.current.value)
+            return setErr('Passwords do not match');
         try {
             setErr('');
             setLoading(true);
-            await login(emailRef.current.value, passwordRef.current.value);
+            await signup(emailRef.current.value, passwordRef.current.value);
             window.location.pathname = '/';
-        } catch (e) {
-            setErr('Failed to Log in');
+        } catch {
+            setErr('Something gone wrong...');
         }
         setLoading(false);
     };
@@ -26,7 +29,7 @@ function Login() {
         <>
             <Card>
                 <Card.Body>
-                    <h2 className="text-center mb-4">Sign In</h2>
+                    <h2 className="text-center mb-4">Sign Up</h2>
                     {err && <Alert variant="danger">{err}</Alert>}
                     <Form onSubmit={handleSubmit}>
                         <Form.Group id="email">
@@ -45,22 +48,29 @@ function Login() {
                                 ref={passwordRef}
                             ></Form.Control>
                         </Form.Group>
-
+                        <Form.Group id="password-confirm">
+                            <Form.Label>Password Confirmation</Form.Label>
+                            <Form.Control
+                                type="password"
+                                required
+                                ref={passwordConfirmRef}
+                            ></Form.Control>
+                        </Form.Group>
                         <Button
                             type="sumbit"
                             className="w-100"
                             disabled={loading}
                         >
-                            Sign In
+                            Sign Up
                         </Button>
                     </Form>
                 </Card.Body>
             </Card>
             <div className="w-100 text-center mt-2">
-                Dont have an account ? <Link to={'/signup'}>Sign Up</Link>
+                Already have an account ? <Link to={'/login'}>Log In</Link>
             </div>
         </>
     );
 }
 
-export default Login;
+export default Signup;

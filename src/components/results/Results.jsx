@@ -15,16 +15,20 @@ function Results({ repo }) {
                 />
             </div>
             <div className="owner-container">
-                <div className="owner-type">Ownership: {repo.owner.type}</div>
-                <div className="owner-name">User name: {repo.owner.login}</div>
+                <div className="owner-type">
+                    <strong>Ownership:</strong> {repo.owner.type}
+                </div>
+                <div className="owner-name">
+                    <strong>User name:</strong> {repo.owner.login}
+                </div>
                 <div className="repo-description">
-                    Description:
+                    <strong> Description: </strong>
                     {repo.description
                         ? repo.description.substring(0, 90)
                         : repo.description}
                 </div>
                 <div className="repo-stars">
-                    Stargazers {repo.stargazers_count}
+                    <strong>Stargazers: </strong> {repo.stargazers_count}
                 </div>
             </div>
             <div className="watchlist-add">

@@ -19,7 +19,7 @@ function Navbar() {
                 </Link>
                 <Link to={'/login'}>
                     <div className="link">
-                        <i className="fa fa-sign-in"> </i> Login
+                        <i className="fa fa-sign-in"> </i> Sign In
                     </div>
                 </Link>
             </div>

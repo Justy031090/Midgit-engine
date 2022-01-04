@@ -11,7 +11,7 @@ some stylish background with headers (_self Ad._)
 ## results page- MUST HAVE
 
  <div> per result  <img> <userinfo><title><watchlistAdd> etc..
- 15 results per page - {<optional - infinite scroll>}.
+ 30 results per page - {<optional - infinite scroll>}.
 <sort> by...
 (<optional) - AFTER>  functionality done - make an advanced search, include date published, author, organization....... will be a <dropdown> menu.
 

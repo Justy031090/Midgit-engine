@@ -3,30 +3,36 @@ import Navbar from './components/navbar/Navbar';
 import Homepage from './components/homepage/Homepage';
 import Watchlist from './components/watchlist/Watchlist';
 import Login from './components/login/Login';
+import Signup from './components/signup/Signup';
 import Search from './components/search/Search';
+import WrongPage from './components/WrongPage/WrongPage';
 import { GlobalProvider } from './components/context/GlobalState';
+import { AuthProvider } from './components/context/AuthContext';
+import PrivateRoute from './PrivateRoute';
 function App() {
     return (
         <div className="app">
             <div>
                 <GlobalProvider>
-                    <BrowserRouter>
-                        <Navbar />
-                        <Switch>
-                            <Route path="/" exact>
-                                <Homepage></Homepage>
-                            </Route>
-                            <Route path="/search">
-                                <Search></Search>
-                            </Route>
-                            <Route path="/watchlist">
-                                <Watchlist></Watchlist>
-                            </Route>
-                            <Route path="/login">
-                                <Login></Login>
-                            </Route>
-                        </Switch>
-                    </BrowserRouter>
+                    <AuthProvider>
+                        <BrowserRouter>
+                            <Navbar />
+                            <Switch>
+                                <Route path="/" exact>
+                                    <Homepage></Homepage>
+                                </Route>
+                                <Route path="/search">
+                                    <Search></Search>
+                                </Route>
+                                <PrivateRoute path="/watchlist">
+                                    <Watchlist></Watchlist>
+                                </PrivateRoute>
+                                <Route path="/login" component={Login}></Route>
+                                <Route path="/signup" component={Signup} />
+                                <Route component={WrongPage} />
+                            </Switch>
+                        </BrowserRouter>
+                    </AuthProvider>
                 </GlobalProvider>
             </div>
         </div>

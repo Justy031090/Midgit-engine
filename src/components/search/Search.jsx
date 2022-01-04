@@ -84,6 +84,7 @@ function Search() {
         <div className="search-container">
             <div className="hard-coded">
                 <input
+                    placeholder="Enter text"
                     type="text"
                     onChange={(e) => handleInput(e)}
                     value={term}
