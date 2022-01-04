@@ -14,10 +14,16 @@ function Homepage() {
                 </div>
             </div>
             <div className="homepage-main">
-                <Link to="/search">
+                <Link to="/signup">
                     <div className="homepage-link">
-                        Start Now <br />
+                        Sign Up <br />
                         For Free
+                    </div>
+                </Link>
+                <Link to="/signup">
+                    <div className="homepage-link">
+                        Search <br />
+                        Repositories
                     </div>
                 </Link>
             </div>

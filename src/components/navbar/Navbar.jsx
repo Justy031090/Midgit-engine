@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import './navbar.css';
+import { useAuth } from '../context/AuthContext';
+import Dash from '../dash/Dash';
 function Navbar() {
+    const { currentUser } = useAuth();
     return (
         <>
             <div className="navbar">
@@ -17,11 +20,15 @@ function Navbar() {
                         <i className="fa fa-list"> </i> Watchlist
                     </div>
                 </Link>
-                <Link to={'/login'}>
-                    <div className="link">
-                        <i className="fa fa-sign-in"> </i> Sign In
-                    </div>
-                </Link>
+                {currentUser ? (
+                    <Dash></Dash>
+                ) : (
+                    <Link to={'/login'}>
+                        <div className="link">
+                            <i className="fa fa-sign-in"> </i> Sign In
+                        </div>
+                    </Link>
+                )}
             </div>
         </>
     );

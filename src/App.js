@@ -9,6 +9,7 @@ import WrongPage from './components/WrongPage/WrongPage';
 import { GlobalProvider } from './components/context/GlobalState';
 import { AuthProvider } from './components/context/AuthContext';
 import PrivateRoute from './PrivateRoute';
+
 function App() {
     return (
         <div className="app">
@@ -24,9 +25,10 @@ function App() {
                                 <Route path="/search">
                                     <Search></Search>
                                 </Route>
-                                <PrivateRoute path="/watchlist">
-                                    <Watchlist></Watchlist>
-                                </PrivateRoute>
+                                <PrivateRoute
+                                    path="/watchlist"
+                                    component={Watchlist}
+                                ></PrivateRoute>
                                 <Route path="/login" component={Login}></Route>
                                 <Route path="/signup" component={Signup} />
                                 <Route component={WrongPage} />

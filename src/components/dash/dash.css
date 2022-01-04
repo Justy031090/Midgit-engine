@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
+.logout-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #f6f6f6;
+}
+.logout {
+    margin-right: 1.5rem;
+}
+.username {
+    color: #f6f6f6;
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 1.3rem;
+    margin: auto 0.2rem;
+}
+.fa-icon {
+    cursor: pointer;
+}
+.fa-sign-out {
+    color: crimson;
+    font-size: 1.5rem;
+    margin: auto 0.2rem;
+}

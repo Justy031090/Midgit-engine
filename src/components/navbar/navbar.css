@@ -34,7 +34,7 @@
 .navbar .fa {
     position: relative;
     color: crimson;
-    padding: 0 0.2rem;
+    margin: auto 0.2rem;
 }
 .fa-home {
     margin-left: 3rem;

@@ -39,14 +39,12 @@
     align-items: center;
     justify-content: center;
     text-align: center;
-    height: 100%;
-    width: 100%;
     border: 3px solid white;
     text-decoration: none;
     color: white;
     font-size: 5rem;
     font-family: 'Permanent Marker', cursive;
-    padding: 5rem;
+    padding: 1rem;
 }
 .homepage-main a {
     display: flex;

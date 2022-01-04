@@ -1,13 +1,18 @@
 import React, { useContext } from 'react';
 import { GlobalContext } from '../context/GlobalState';
 import RepoCard from '../repo-card/RepoCard';
+import { useAuth } from '../context/AuthContext';
 import './watchlist.css';
 
 function Watchlist() {
+    const { currentUser } = useAuth();
+    const user = currentUser.email.split('@').slice(0, 1);
     const { watchlist } = useContext(GlobalContext);
     return (
         <div className="watchlist-container">
-            <h2>My Watchlist</h2>
+            <h2>
+                <strong>User:</strong> {user}
+            </h2>
 
             {watchlist.length > 0 ? (
                 watchlist.map((repo) => {

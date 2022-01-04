@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
 import { useAuth } from '../context/AuthContext';
+import './dash.css';
 
 function Dash() {
     const [err, setErr] = useState('');
     const { currentUser, logout } = useAuth();
+    const user = currentUser.email.split('@').slice(0, 1);
     const handleLogOut = async () => {
         setErr('');
         try {
@@ -14,17 +16,13 @@ function Dash() {
         }
     };
     return (
-        <div>
-            <div>
-                <strong>Email:</strong>
-                {currentUser.email}
+        <div className="logout-container">
+            <div className="fa-icon" onClick={handleLogOut}>
+                <i className="fa fa-sign-out"> </i>
             </div>
             <div className="logout">
+                <h2 className="username">{user}</h2>
                 {err && <h2>{err}</h2>}
-                <i className="fa fa-sign-out"> </i>
-                <button className="logout-btn" onClick={handleLogOut}>
-                    Log Out
-                </button>
             </div>
         </div>
     );
