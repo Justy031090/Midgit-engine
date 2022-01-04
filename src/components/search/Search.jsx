@@ -34,7 +34,7 @@ function Search() {
                 const fetchedData = await axios.get(
                     `https://api.github.com/search/repositories?q=${search}&page=${page}`
                 );
-                setData([...data, ...fetchedData.data.items]);
+                setData((prev) => [...prev, ...fetchedData.data.items]);
             } catch (e) {
                 setErr(e.message);
             }
