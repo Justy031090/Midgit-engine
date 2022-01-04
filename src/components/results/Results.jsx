@@ -1,7 +1,9 @@
 import { GlobalContext } from '../context/GlobalState';
 import { useContext } from 'react';
+import { useAuth } from '../context/AuthContext';
 
 function Results({ repo }) {
+    const { currentUser } = useAuth();
     const { addToWatchList, watchlist } = useContext(GlobalContext);
     let storedRepo = watchlist.find((o) => o.id === repo.id);
     const repoDisabled = storedRepo ? true : false;
@@ -32,13 +34,23 @@ function Results({ repo }) {
                 </div>
             </div>
             <div className="watchlist-add">
-                <button
-                    className="watchlist-btn"
-                    disabled={repoDisabled}
-                    onClick={() => addToWatchList(repo)}
-                >
-                    Add to Watchlist
-                </button>
+                {currentUser ? (
+                    <button
+                        className="watchlist-btn"
+                        disabled={repoDisabled}
+                        onClick={() => addToWatchList(repo)}
+                    >
+                        Add to Watchlist
+                    </button>
+                ) : (
+                    <button
+                        className="watchlist-btn"
+                        disabled={true}
+                        onClick={() => addToWatchList(repo)}
+                    >
+                        Sign In to use Watchlist
+                    </button>
+                )}
             </div>
             <div className="owner-github">
                 <div className="owner-github">
