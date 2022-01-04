@@ -20,7 +20,7 @@ function Homepage() {
                         For Free
                     </div>
                 </Link>
-                <Link to="/signup">
+                <Link to="/search">
                     <div className="homepage-link">
                         Search <br />
                         Repositories

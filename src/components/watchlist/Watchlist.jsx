@@ -11,7 +11,7 @@ function Watchlist() {
     return (
         <div className="watchlist-container">
             <h2>
-                <strong>User:</strong> {user}
+                <strong>Hello:</strong> <i>{user}</i>
             </h2>
 
             {watchlist.length > 0 ? (
