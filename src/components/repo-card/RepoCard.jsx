@@ -39,7 +39,7 @@ function RepoCard({ repo, type }) {
                 </button>
             </div>
             <div className="owners-github">
-                <a href={repo.owner.url}>Watch in github</a>
+                <a href={repo.html_url}>Follow</a>
             </div>
         </div>
     );

@@ -52,9 +52,9 @@ function Results({ repo }) {
                     </button>
                 )}
             </div>
-            <div className="owner-github">
-                <div className="owner-github">
-                    <a href={repo.owner.url}>Watch in github </a>
+            <div className="owners-github">
+                <div className="owners-github">
+                    <a href={repo.html_url}>Follow </a>
                 </div>
             </div>
         </div>
