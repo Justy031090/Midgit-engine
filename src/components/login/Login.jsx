@@ -8,7 +8,7 @@ function Login() {
     const [loading, setLoading] = useState(false);
     const emailRef = useRef();
     const passwordRef = useRef();
-    const { login } = useAuth();
+    const { login, socialMediaAuth } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -17,6 +17,18 @@ function Login() {
             setLoading(true);
             await login(emailRef.current.value, passwordRef.current.value);
             window.location.pathname = '/';
+        } catch (e) {
+            setErr('Failed to Log in');
+        }
+        setLoading(false);
+    };
+    const handleSocialMedia = async (e) => {
+        e.preventDefault();
+        try {
+            setErr('');
+            setLoading(true);
+            const res = await socialMediaAuth();
+            console.log(res);
         } catch (e) {
             setErr('Failed to Log in');
         }
@@ -55,6 +67,7 @@ function Login() {
                         </Button>
                     </Form>
                 </Card.Body>
+                <Button onClick={handleSocialMedia}>Sign in With Google</Button>
             </Card>
             <div className="w-100 text-center mt-2">
                 Dont have an account ? <Link to={'/signup'}>Sign Up</Link>

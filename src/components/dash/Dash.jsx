@@ -10,6 +10,7 @@ function Dash() {
         setErr('');
         try {
             await logout();
+            window.localStorage.clear();
             window.location.pathname = '/';
         } catch {
             setErr('Please try again');

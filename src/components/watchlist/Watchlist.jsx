@@ -8,6 +8,7 @@ function Watchlist() {
     const { currentUser } = useAuth();
     const user = currentUser.email.split('@').slice(0, 1);
     const { watchlist } = useContext(GlobalContext);
+
     return (
         <div className="watchlist-container">
             <h2>

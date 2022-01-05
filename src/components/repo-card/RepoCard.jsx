@@ -39,7 +39,9 @@ function RepoCard({ repo, type }) {
                 </button>
             </div>
             <div className="owners-github">
-                <a href={repo.html_url}>Follow</a>
+                <a href={repo.html_url} rel="noreferrer" target="_blank">
+                    Follow
+                </a>
             </div>
         </div>
     );

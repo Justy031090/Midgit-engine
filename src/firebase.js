@@ -1,14 +1,16 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
+import 'firebase/compat/database';
 
 const app = firebase.initializeApp({
     apiKey: 'AIzaSyDEZS3tE0xJxsw706qoeV4EoZbkMiUpd1s',
-    authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
-    projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
-    storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
-    messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
-    appId: process.env.REACT_APP_FIREBASE_APP_ID,
-    measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID,
+    authDomain: 'mid-project-9f056.firebaseapp.com',
+    projectId: 'mid-project-9f056',
+    storageBucket: 'mid-project-9f056.appspot.com',
+    messagingSenderId: '768747972837',
+    appId: '1:768747972837:web:5cc79733b3c5fe21c20c0c',
+    measurementId: 'G-Z93ZR41JFN',
 });
+export const db = app.database();
 export const auth = app.auth();
 export default app;

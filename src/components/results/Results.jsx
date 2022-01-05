@@ -1,6 +1,8 @@
 import { GlobalContext } from '../context/GlobalState';
 import { useContext } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { Link } from 'react-router-dom';
+// import
 
 function Results({ repo }) {
     const { currentUser } = useAuth();
@@ -48,13 +50,15 @@ function Results({ repo }) {
                         disabled={true}
                         onClick={() => addToWatchList(repo)}
                     >
-                        Sign In to use Watchlist
+                        <Link to={'/login'}>Sign in to use</Link>
                     </button>
                 )}
             </div>
             <div className="owners-github">
                 <div className="owners-github">
-                    <a href={repo.html_url}>Follow </a>
+                    <a href={repo.html_url} rel="noreferrer" target="_blank">
+                        Follow{' '}
+                    </a>
                 </div>
             </div>
         </div>
