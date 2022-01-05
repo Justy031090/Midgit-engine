@@ -8,7 +8,7 @@ function Login() {
     const [loading, setLoading] = useState(false);
     const emailRef = useRef();
     const passwordRef = useRef();
-    const { login, socialMediaAuth } = useAuth();
+    const { login, googleAuth, githubAuth } = useAuth();
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -23,12 +23,24 @@ function Login() {
         }
         setLoading(false);
     };
-    const handleSocialMedia = async (e) => {
+    const handleGoogle = async (e) => {
         e.preventDefault();
         try {
             setErr('');
             setLoading(true);
-            await socialMediaAuth();
+            await googleAuth();
+            window.location.pathname = '/';
+        } catch (e) {
+            setErr('Failed to Log in');
+        }
+        setLoading(false);
+    };
+    const handleGithub = async (e) => {
+        e.preventDefault();
+        try {
+            setErr('');
+            setLoading(true);
+            await githubAuth();
             window.location.pathname = '/';
         } catch (e) {
             setErr('Failed to Log in');
@@ -70,7 +82,10 @@ function Login() {
                 </Card.Body>
             </Card>
             <div className="text-center mt-2 ">
-                <Button onClick={handleSocialMedia}>Sign in With Google</Button>
+                <Button onClick={handleGoogle}>Sign in With Google</Button>
+            </div>
+            <div className="text-center mt-2 ">
+                <Button onClick={handleGithub}>Sign in With Github</Button>
             </div>
 
             <div className="w-100 text-center mt-2">

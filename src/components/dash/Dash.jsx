@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { db } from '../../firebase';
 import { GlobalContext } from '../context/GlobalState';
-import { addDoc } from 'firebase/firestore';
+import { addDoc, getDocs, setDoc } from 'firebase/firestore';
 import './dash.css';
 
 function Dash() {
@@ -14,8 +14,18 @@ function Dash() {
     const handleLogOut = async () => {
         setErr('');
         try {
-            // if id kayam then set id
-            // if lo kayam add
+            await getDocs(db).then((snapshot) => {
+                snapshot.docs.forEach((doc) => {
+                    const data = doc.data();
+                    if (currentUser._delegate.uid === data.id) {
+                        setDoc(
+                            doc.ref,
+                            { id: uid, watchlist },
+                            { merge: true }
+                        );
+                    }
+                });
+            });
             if (watchlist.length)
                 await addDoc(db, {
                     id: uid,

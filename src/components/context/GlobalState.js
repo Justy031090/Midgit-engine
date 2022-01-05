@@ -25,7 +25,6 @@ export const GlobalProvider = (props) => {
                 await getDocs(db).then((snapshot) => {
                     snapshot.docs.forEach((doc) => {
                         const data = doc.data();
-                        console.log(doc.id, doc.ref);
                         if (currentUser._delegate.uid === data.id) {
                             setfbWatchlist(data.watchlist);
                             localStorage.setItem(
