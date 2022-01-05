@@ -14,6 +14,8 @@ function Dash() {
     const handleLogOut = async () => {
         setErr('');
         try {
+            // if id kayam then set id
+            // if lo kayam add
             if (watchlist.length)
                 await addDoc(db, {
                     id: uid,

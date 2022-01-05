@@ -1,22 +1,14 @@
-import { createContext, useReducer, useEffect } from 'react';
-import AppReducer from './AppReducer';
+import { createContext, useEffect, useState } from 'react';
+// import AppReducer from './AppReducer';
 import { getDocs } from 'firebase/firestore';
 import { db } from '../../firebase';
+import { useAuth } from '../context/AuthContext';
 
 //initial state
 const initialState = {
     watchlist: localStorage.getItem('watchlist')
         ? JSON.parse(localStorage.getItem('watchlist'))
         : [],
-    myWatchlist: null,
-};
-
-const getData = async () => {
-    await getDocs(db).then((snapshot) => {
-        return snapshot.docs.map((doc) => {
-            return doc.data().watchlist;
-        });
-    });
 };
 
 //create context
@@ -24,25 +16,39 @@ export const GlobalContext = createContext(initialState);
 
 //provider
 export const GlobalProvider = (props) => {
-    const [state, dispatch] = useReducer(AppReducer, initialState);
-
+    // const [state, dispatch] = useReducer(AppReducer, initialState);
+    const [fbWatchlist, setfbWatchlist] = useState([]);
+    const { currentUser } = useAuth();
     useEffect(() => {
-        localStorage.setItem('watchlist', JSON.stringify(state.watchlist));
-    }, [state]);
+        const getList = async () => {
+            if (currentUser)
+                await getDocs(db).then((snapshot) => {
+                    snapshot.docs.forEach((doc) => {
+                        const data = doc.data();
+                        console.log(doc.id, doc.ref);
+                        if (currentUser._delegate.uid === data.id) {
+                            setfbWatchlist(data.watchlist);
+                            localStorage.setItem(
+                                'watchlist',
+                                JSON.stringify(data.watchlist)
+                            );
+                        }
+                    });
+                });
+        };
+        getList();
+    }, [currentUser]);
     //actions
     const addToWatchList = (repo) => {
-        dispatch({
-            type: 'ADD_REPO_TO_WATCHLIST',
-            payload: repo,
-        });
+        setfbWatchlist([repo, ...fbWatchlist]);
     };
-    const removeFromWatchList = (repo) => {
-        dispatch({ type: 'REMOVE_REPO_FROM_WATCHLIST', payload: repo });
+    const removeFromWatchList = (watchItem) => {
+        setfbWatchlist((list) => list.filter((i) => i !== watchItem));
     };
     return (
         <GlobalContext.Provider
             value={{
-                watchlist: state.watchlist,
+                watchlist: fbWatchlist,
                 addToWatchList,
                 removeFromWatchList,
             }}

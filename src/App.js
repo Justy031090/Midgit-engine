@@ -14,8 +14,8 @@ function App() {
     return (
         <div className="app">
             <div>
-                <GlobalProvider>
-                    <AuthProvider>
+                <AuthProvider>
+                    <GlobalProvider>
                         <BrowserRouter>
                             <Navbar />
                             <Switch>
@@ -34,8 +34,8 @@ function App() {
                                 <Route component={WrongPage} />
                             </Switch>
                         </BrowserRouter>
-                    </AuthProvider>
-                </GlobalProvider>
+                    </GlobalProvider>
+                </AuthProvider>
             </div>
         </div>
     );
