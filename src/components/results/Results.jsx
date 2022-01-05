@@ -2,7 +2,6 @@ import { GlobalContext } from '../context/GlobalState';
 import { useContext } from 'react';
 import { useAuth } from '../context/AuthContext';
 import { Link } from 'react-router-dom';
-// import
 
 function Results({ repo }) {
     const { currentUser } = useAuth();

@@ -1,14 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { useAuth } from '../context/AuthContext';
+import { db } from '../../firebase';
+import { GlobalContext } from '../context/GlobalState';
+import { addDoc } from 'firebase/firestore';
 import './dash.css';
 
 function Dash() {
     const [err, setErr] = useState('');
     const { currentUser, logout } = useAuth();
     const user = currentUser.email.split('@').slice(0, 1);
+    const uid = currentUser._delegate.uid;
+    const { watchlist } = useContext(GlobalContext);
     const handleLogOut = async () => {
         setErr('');
         try {
+            if (watchlist.length)
+                await addDoc(db, {
+                    id: uid,
+                    watchlist,
+                });
             await logout();
             window.localStorage.clear();
             window.location.pathname = '/';

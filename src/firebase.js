@@ -1,6 +1,7 @@
 import firebase from 'firebase/compat/app';
 import 'firebase/compat/auth';
 import 'firebase/compat/database';
+import { getFirestore, collection } from 'firebase/firestore';
 
 const app = firebase.initializeApp({
     apiKey: 'AIzaSyDEZS3tE0xJxsw706qoeV4EoZbkMiUpd1s',
@@ -11,6 +12,7 @@ const app = firebase.initializeApp({
     appId: '1:768747972837:web:5cc79733b3c5fe21c20c0c',
     measurementId: 'G-Z93ZR41JFN',
 });
-export const db = app.database();
+const fb = getFirestore();
+export const db = collection(fb, 'watchlist');
 export const auth = app.auth();
 export default app;

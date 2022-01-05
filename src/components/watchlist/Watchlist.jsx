@@ -7,7 +7,8 @@ import './watchlist.css';
 function Watchlist() {
     const { currentUser } = useAuth();
     const user = currentUser.email.split('@').slice(0, 1);
-    const { watchlist } = useContext(GlobalContext);
+    const { watchlist, myWatchlist } = useContext(GlobalContext);
+    console.log(myWatchlist);
 
     return (
         <div className="watchlist-container">

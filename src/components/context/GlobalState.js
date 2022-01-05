@@ -1,15 +1,22 @@
 import { createContext, useReducer, useEffect } from 'react';
 import AppReducer from './AppReducer';
+import { getDocs } from 'firebase/firestore';
+import { db } from '../../firebase';
 
 //initial state
-
 const initialState = {
     watchlist: localStorage.getItem('watchlist')
         ? JSON.parse(localStorage.getItem('watchlist'))
         : [],
-    watched: localStorage.getItem('watched')
-        ? JSON.parse(localStorage.getItem('watched'))
-        : [],
+    myWatchlist: null,
+};
+
+const getData = async () => {
+    await getDocs(db).then((snapshot) => {
+        return snapshot.docs.map((doc) => {
+            return doc.data().watchlist;
+        });
+    });
 };
 
 //create context
@@ -21,7 +28,6 @@ export const GlobalProvider = (props) => {
 
     useEffect(() => {
         localStorage.setItem('watchlist', JSON.stringify(state.watchlist));
-        localStorage.setItem('watched', JSON.stringify(state.watched));
     }, [state]);
     //actions
     const addToWatchList = (repo) => {
@@ -37,7 +43,6 @@ export const GlobalProvider = (props) => {
         <GlobalContext.Provider
             value={{
                 watchlist: state.watchlist,
-                watched: state.watched,
                 addToWatchList,
                 removeFromWatchList,
             }}
