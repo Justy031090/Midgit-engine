@@ -16,7 +16,6 @@ export const GlobalContext = createContext(initialState);
 
 //provider
 export const GlobalProvider = (props) => {
-    // const [state, dispatch] = useReducer(AppReducer, initialState);
     const [fbWatchlist, setfbWatchlist] = useState([]);
     const { currentUser } = useAuth();
     useEffect(() => {
