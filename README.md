@@ -78,4 +78,4 @@ await fix.problems
 <br>
 -create a dropdown sign in.
 
-and many more (and i always welcome some good & challenging ideas ) !
+and many more (and i always welcome some good & challenging ideas )!
