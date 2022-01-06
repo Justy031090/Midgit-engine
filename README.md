@@ -7,7 +7,7 @@ The choice to work on the Github API stems from the fact that it has a lot of op
 
 Part of the thought of building this project is the ability to continue its development over time by building new features that will advance my learning as a developer.
 
-As for this is a basic CRUD up where you can search for Github repositories, sign up and store them in your accounts watchlist for later reference.
+As for this is a basic app where you can search for Github repositories, sign up and store them in your accounts watchlist for later reference.
 
 ##### [Check out --v 1.0.0 ! =)](https://midgit-engine.netlify.app/)
 
