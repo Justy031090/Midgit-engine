@@ -39,6 +39,8 @@ or follow to watch it directly on owner's Github.
 ### Problems To fix
 -DB updates the old doc and creates new doc for the stored watchlist
 instead of just updating.
+<br>
+-spinner not showing on lazy scroll activation.
 
 
 ### What i'm looking to do next ?
