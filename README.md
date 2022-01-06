@@ -16,15 +16,23 @@ Part of the thought of building this project is the ability to continue its deve
 <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer"> <img src="https://camo.githubusercontent.com/bec2c92468d081617cb3145a8f3d8103e268bca400f6169c3a68dc66e05c971e/68747470733a2f2f76352e676574626f6f7473747261702e636f6d2f646f63732f352e302f6173736574732f6272616e642f626f6f7473747261702d6c6f676f2d736861646f772e706e67" alt="bootstrap" width="40" height="40"/> </a></p>
 <h3>Tech</h3>
 
-[-Firebase Auth. - mail, gmail account, github account.] (https://firebase.google.com/)
+##### [Firebase Auth. - mail, gmail account, github account.] (https://firebase.google.com/)
+
 <br>
-[-Firebase firestore for users watchlist storage.] (https://firebase.google.com/)
+
+##### [Firebase firestore for users watchlist storage.] (https://firebase.google.com/)
+
 <br>
-[-Bootstrap styling - for Signing up and Signing in.] (https://getbootstrap.com/)
+
+##### [Bootstrap styling - for Signing up and Signing in.] (https://getbootstrap.com/)
+
 <br>
-[-Font Awesome styling - for icons.] (https://fontawesome.com/)
+
+##### [Font Awesome styling - for icons.] (https://fontawesome.com/)
+
 <br>
-[-Favicon.io - generating favicon (buy them a coffee).] (https://favicon.io/)
+
+##### [Favicon.io - generating favicon (buy them a coffee).] (https://favicon.io/)
 
 <h3>Features</h3>
 -React app & React Router
