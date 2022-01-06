@@ -51,5 +51,9 @@ await fix.problems
 -create advanced search.
 <br>
 -create a dropdown sign in.
+<br>
+-create mobile dropdown menu.
+<br>
+-styling...
 
 and many more (and i always welcome some good & challenging ideas ) !
