@@ -25,7 +25,7 @@ or follow to watch it directly on owner's Github.
 #####  <a href="https://favicon.io/" target="_blank" rel="noreferrer">-Favicon.io - generating favicon. </a>
 #####  <a href="https://axios-http.com/docs/intro" target="_blank" rel="noreferrer">-Axios - Promise based HTTP client for the browser and node.js. </a>
 
-<h3>Features</h3>
+<h3>Additional Tools & Features</h3>
 -React app & React Router
 <br>
 -Private Route.
