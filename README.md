@@ -32,13 +32,13 @@ Part of the thought of building this project is the ability to continue its deve
 <br>
 *screen responsiveness.
 
-### Issues to fix
+### Problems To fix
 -DB updates the old doc and creates new doc for the stored watchlist
 instead of just updating.
 
 
 ### What i'm looking to do next ?
-[...fix, issues]
+[...fix, problems]
 <br>
 .then()
 <br>
