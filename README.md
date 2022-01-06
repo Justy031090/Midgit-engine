@@ -23,7 +23,7 @@ or follow to watch it directly on owner's Github.
 #####  <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer">-Bootstrap styling - for Signing up and Signing in. </a>
 #####  <a href="https://fontawesome.com/" target="_blank" rel="noreferrer">-Font Awesome styling - for icons. </a>
 #####  <a href="https://favicon.io/" target="_blank" rel="noreferrer">-Favicon.io - generating favicon. </a>
-#####  <a href="https://axios-http.com/docs/intro" target="_blank" rel="noreferrer">-Promise based HTTP client for the browser and node.js. </a>
+#####  <a href="https://axios-http.com/docs/intro" target="_blank" rel="noreferrer">-Axios - Promise based HTTP client for the browser and node.js. </a>
 
 <h3>Features</h3>
 -React app & React Router
