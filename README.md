@@ -19,8 +19,8 @@ Part of the thought of building this project is the ability to continue its deve
 #####  <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">-Firebase Auth. - mail, gmail account, github account. </a>
 #####  <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">-Firebase firestore for users watchlist storage. </a>
 #####  <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer">-Bootstrap styling - for Signing up and Signing in. </a>
-##### [Font Awesome styling - for icons] (https://fontawesome.com/)
-##### [Favicon.io - generating favicon (buy them a coffee)] (https://favicon.io/)
+#####  <a href="https://fontawesome.com/" target="_blank" rel="noreferrer">-Font Awesome styling - for icons. </a>
+#####  <a href="https://favicon.io/" target="_blank" rel="noreferrer">-Favicon.io - generating favicon (buy them a coffee). </a>
 
 <h3>Features</h3>
 -React app & React Router
