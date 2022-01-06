@@ -38,7 +38,10 @@ instead of just updating.
 
 
 ### What i'm looking to do next ?
-
+...fix issues
+<br>
+.then()
+<br>
 -create issues on git from the project.
 <br>
 -making advanced search.
