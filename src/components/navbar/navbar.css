@@ -39,3 +39,18 @@
 .fa-home {
     margin-left: 3rem;
 }
+
+@media (max-width: 770px) {
+    .navbar {
+        flex-direction: column;
+        background-color: rgba(0, 0, 0, 0.904);
+    }
+    .logo {
+        margin-left: auto;
+        font-size: 1.5rem;
+    }
+    .navbar a {
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+}

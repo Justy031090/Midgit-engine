@@ -15,7 +15,8 @@ function Watchlist() {
     return (
         <div className="watchlist-container">
             <h2>
-                <strong>Hello:</strong> <i>{user}</i>
+                <strong className="strong">Hello:</strong>{' '}
+                <i className="username">{user}</i>
             </h2>
 
             {watchlist.length > 0 ? (
@@ -27,7 +28,7 @@ function Watchlist() {
                     );
                 })
             ) : (
-                <h2>Add some of your favorite Repos !</h2>
+                <h2 className="empty">Add some of your favorite Repos !</h2>
             )}
         </div>
     );

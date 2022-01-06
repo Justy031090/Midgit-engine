@@ -138,3 +138,18 @@
         transform: rotate(360deg);
     }
 }
+
+@media (max-width: 770px) {
+    .rendered-container {
+        align-items: center;
+        justify-content: center;
+    }
+    .result-card {
+        flex-direction: column;
+        margin: 0;
+        padding: 0.2rem;
+    }
+    .avatar-image {
+        margin: 0.2rem;
+    }
+}

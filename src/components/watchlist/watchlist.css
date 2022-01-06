@@ -6,6 +6,17 @@
     height: 100%;
     background-color: #a9a9a9;
 }
+.username {
+    color: rgb(172, 45, 172);
+    font-size: 1.2rem;
+}
+.strong {
+    color: rgb(100, 15, 100);
+}
+.empty {
+    color: crimson;
+    text-align: center;
+}
 .repo-card {
     display: flex;
     justify-content: flex-start;
@@ -60,4 +71,17 @@
 .rendered-container {
     display: flex;
     background: #a9a9a9;
+}
+@media (max-width: 770px) {
+    .repo-card {
+        flex-direction: column;
+        margin: 0;
+        padding: 0.2rem;
+    }
+    .avatar-image {
+        margin: 0.2rem;
+    }
+    .empty {
+        font-size: 1.2rem;
+    }
 }
