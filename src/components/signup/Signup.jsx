@@ -20,8 +20,8 @@ function Signup() {
             setLoading(true);
             await signup(emailRef.current.value, passwordRef.current.value);
             window.location.pathname = '/';
-        } catch {
-            setErr('Something gone wrong...');
+        } catch (e) {
+            setErr(e.message.slice(9));
         }
         setLoading(false);
     };
