@@ -7,6 +7,9 @@ The choice to work on the Github API stems from the fact that it has a lot of op
 
 Part of the thought of building this project is the ability to continue its development over time by building new features that will advance my learning as a developer.
 
+_Currently_ this is a basic app where you can search for Github repositories, sign up and store them in your accounts watchlist for later reference,
+or follow to watch it directly on owner's Github.
+
 ##### [Check out --v 1.0.0 ! =)](https://midgit-engine.netlify.app/)
 
 <img src="https://github.com/Justy031090/Midgit-engine/blob/main/snip-home.PNG?raw=true" width='400' height='200'/><img src="https://github.com/Justy031090/Midgit-engine/blob/main/snip-watchlist.PNG?raw=true" width='400' height='200'/>
@@ -14,25 +17,16 @@ Part of the thought of building this project is the ability to continue its deve
 <h3 align="left">Languages and Tools:</h3>
 <p align="left"> <a href="https://www.w3schools.com/css/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/> </a> <a href="https://firebase.google.com/" target="_blank" rel="noreferrer"> <img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="40" height="40"/> </a> <a href="https://www.w3.org/html/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/> </a> <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/> </a> <a href="https://reactjs.org/" target="_blank" rel="noreferrer"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/react/react-original-wordmark.svg" alt="react" width="40" height="40"/> </a> 
 <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer"> <img src="https://camo.githubusercontent.com/bec2c92468d081617cb3145a8f3d8103e268bca400f6169c3a68dc66e05c971e/68747470733a2f2f76352e676574626f6f7473747261702e636f6d2f646f63732f352e302f6173736574732f6272616e642f626f6f7473747261702d6c6f676f2d736861646f772e706e67" alt="bootstrap" width="40" height="40"/> </a></p>
-<h3>Tech</h3>
 
-##### [Firebase Auth. - mail, gmail account, github account.] (https://firebase.google.com/)
+##### <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">-Firebase Auth. - mail, gmail account, github account. </a>
 
-<br>
+##### <a href="https://firebase.google.com/" target="_blank" rel="noreferrer">-Firebase firestore for users watchlist storage. </a>
 
-##### [Firebase firestore for users watchlist storage.] (https://firebase.google.com/)
+##### <a href="https://getbootstrap.com/" target="_blank" rel="noreferrer">-Bootstrap styling - for Signing up and Signing in. </a>
 
-<br>
+##### <a href="https://fontawesome.com/" target="_blank" rel="noreferrer">-Font Awesome styling - for icons. </a>
 
-##### [Bootstrap styling - for Signing up and Signing in.] (https://getbootstrap.com/)
-
-<br>
-
-##### [Font Awesome styling - for icons.] (https://fontawesome.com/)
-
-<br>
-
-##### [Favicon.io - generating favicon (buy them a coffee).] (https://favicon.io/)
+##### <a href="https://favicon.io/" target="_blank" rel="noreferrer">-Favicon.io - generating favicon. </a>
 
 <h3>Features</h3>
 -React app & React Router
@@ -45,12 +39,22 @@ Part of the thought of building this project is the ability to continue its deve
 <br>
 *screen responsiveness.
 
+### Problems To fix
+
+-DB updates the old doc and creates new doc for the stored watchlist
+instead of just updating.
+
 ### What i'm looking to do next ?
 
--create issues on git from the project.
+await fix.problems
 <br>
--making advanced search.
+.then()
 <br>
--making a dropdown sign in.
+<br>
+-create an option to create issues on github from the projects page.
+<br>
+-create advanced search.
+<br>
+-create a dropdown sign in.
 
 and many more (and i always welcome some good & challenging ideas ) !
