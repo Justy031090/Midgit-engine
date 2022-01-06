@@ -41,15 +41,15 @@ instead of just updating.
 
 
 ### What i'm looking to do next ?
-[...fix, problems]
+await fix.problems
 <br>
 .then()
 <br>
 <br>
--create issues on git from the project.
+-create an option to create issues on github from the projects page.
 <br>
--making advanced search.
+-create advanced search.
 <br>
--making a dropdown sign in.
+-create a dropdown sign in.
 
 and many more (and i always welcome some good & challenging ideas ) !
