@@ -38,7 +38,7 @@ instead of just updating.
 
 
 ### What i'm looking to do next ?
-...fix issues
+[...fix, issues]
 <br>
 .then()
 <br>
