@@ -5,14 +5,10 @@ import { db } from '../../firebase';
 import { useAuth } from '../context/AuthContext';
 
 //initial state
-const initialState = {
-    watchlist: localStorage.getItem('watchlist')
-        ? JSON.parse(localStorage.getItem('watchlist'))
-        : [],
-};
+// const initialState = [];
 
 //create context
-export const GlobalContext = createContext(initialState);
+export const GlobalContext = createContext();
 
 //provider
 export const GlobalProvider = (props) => {

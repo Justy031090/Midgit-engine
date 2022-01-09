@@ -43,6 +43,7 @@ function Search() {
         };
         const timeOut = setTimeout(() => {
             if (search) {
+                setData([]);
                 getData();
             }
         }, 500);
